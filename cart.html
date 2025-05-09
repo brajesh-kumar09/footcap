@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+    <nav style="position: relative">
+        <div id="logo">
+            <a href=""><img src="./images/logo.svg" alt="" /></a>
+        </div>
+        <div id="contlog">
+            <a id="callbtn" href="contact.html"><img src="./images/call.png" alt="" /></a>
+            <a id="wishlistbtn" href="wishlist.html"><img src="./images/wishlist.png" alt="" /></a>
+            <a id="cartbtn" href="cart.html"><img src="./images/cart.png" alt="" /></a>
+            <a id="personbtn" href="#"><img src="./images/person.png" alt="" /></a>
+            <a id="loginbtn" href="#"><img src="./images/login.png" alt="" /></a>
+        </div>
+    </nav>
+    <div  id="cartheading">
+        <h2>MY CART</h2>
+    </div>
+    <div id="cartall">
+        <div id="cartitems">
+            <div class="carts">
+                <img src="./images/insta-1.jpg" alt="" />
+                <div class="details">
+                    <p class="cartname">PUMA Nike Running Shoes</p>
+                    <p class="cartsize">Size: 9</p>
+                    <p class="cartprice">$34.6</p>
+                    <label for="quantity">Quantity:</label>
+                    <input type="number" name="quantity" value="1" min="1" required/>
+                </div>
+                <img src="./images/delete.png" alt="" class="dltbtn" />
+            </div>
+            <div class="carts">
+                <img src="./images/insta-1.jpg" alt="" />
+                <div class="details">
+                    <p class="cartname">PUMA Nike Running Shoes</p>
+                    <p class="cartsize">Size: 9</p>
+                    <p class="cartprice">$34.6</p>
+                    <label for="quantity">Quantity:</label>
+                    <input type="number" name="quantity" value="1" min="1" required/>
+                </div>
+                <img src="./images/delete.png" alt="" class="dltbtn" />
+            </div>
+        </div>
+        <div id="checkout">
+            <div class="total">
+                <p>Subtotal</p>
+                <p>435</p>
+            </div>
+            <div class="total">
+                <p>Grandtotal</p>
+                <p>435</p>
+            </div>
+            <button><a href="checkout.html">Check Out</a></button>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>
