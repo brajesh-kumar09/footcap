@@ -220,6 +220,10 @@ nav {
 /* login signup */
 #signup,
 #login {
+  *{
+    padding: 0;
+    margin: 0;
+  }
   display: flex;
   justify-content: center;
   margin-block: 12.5%;

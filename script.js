@@ -77,7 +77,7 @@ function attachLoginSubmitListener() {
 
     if (storedUser && storedUser.email === email && storedUser.password === password) {
       alert("Login successful!");
-      document.getElementById("contlog").innerHTML = `<a id="callbtn" href="#"><img src="./images/call.png" alt=""></a>
+      document.getElementById("contlog").innerHTML = `<a id="callbtn" href="contact.html"><img src="./images/call.png" alt=""></a>
         <a id="wishlistbtn" href="wishlist.html"><img src="./images/wishlist.png" alt=""></a>
         <a id="cartbtn" href="cart.html"><img src="./images/cart.png" alt=""></a>
         <a id="personbtn" href="#"><img src="./images/person.png" alt=""></a>
