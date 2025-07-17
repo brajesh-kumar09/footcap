@@ -39,16 +39,6 @@
 
 ---
 
-## 📂 Project Structure
-
-
----
-
-## 📸 Screenshots (optional)
-
-
----
-
 ## 🧪 Status
 
 ✅ Fully developed and functional frontend prototype.  
