@@ -8,7 +8,7 @@
 
 - **HTML5**
 - **CSS3**
-- **JavaScript (Vanilla JS)**
+- **JavaScript (JS)**
 
 ---
 
@@ -16,7 +16,7 @@
 
 - Homepage with featured shoes and categories
 - Simple **Sign Up** and **Login** functionality (data stored on frontend only)
-- Responsive layout for desktop and mobile
+- Responsive layout for desktop
 - Fully functional UI for browsing shoes
 
 ---
@@ -24,8 +24,7 @@
 ## 🔐 How to Use
 
 1. **Visit the site**  
-   - [GitHub Pages Live Link](https://your-username.github.io/footcap/)  
-   *(Replace with actual link after deployment)*
+   - [GitHub Pages Live Link](https://brajesh-kumar09.github.io/footcap/)  
 
 2. **Sign Up**
    - Click the **"Sign Up"** button.
