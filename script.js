@@ -1,4 +1,22 @@
 'use restrict';
+
+// Check login status on page load
+(function checkLoginStatus() {
+  const storedUser = JSON.parse(localStorage.getItem("user"));
+  if (storedUser) {
+    document.getElementById("contlog").innerHTML = `<a id="callbtn" href="contact.html"><img src="./images/call.png" alt=""></a>
+      <a id="wishlistbtn" href="wishlist.html"><img src="./images/wishlist.png" alt=""></a>
+      <a id="cartbtn" href="cart.html"><img src="./images/cart.png" alt=""></a>
+      <a id="personbtn" href="#"><img src="./images/person.png" alt=""></a>
+      <a id="loginbtn" href="#"><img src="./images/login.png" alt=""></a>`;
+    document.getElementById('collections').style.display = "block";
+    document.getElementById("shopsection").style.display = "block";
+    document.getElementById("logincontainer").innerHTML = "";
+  } else {
+    document.getElementById('collections').style.display = "none";
+  }
+})();
+
 document.getElementById("loginbtn").addEventListener("click", function () {
   document.getElementById("shopsection").style.display = "none";
   fetch("login.html")
@@ -103,26 +121,50 @@ document.querySelectorAll("#menu>ul>li").forEach(li => li.addEventListener('clic
   this.style.border = 'none';
 }));
 
-//WISHLISEIT //notworking
-document.querySelectorAll('.wishbtn').forEach(wisbtn => {
-  wisbtn.addEventListener('click', function () {
-    const productHTML = this.closest(".shoes").outerHTML;
+function addToStorage(key, item) {
+  let items = JSON.parse(localStorage.getItem(key)) || [];
+  if (!items.some(i => i.id === item.id)) {
+    items.push(item);
+    localStorage.setItem(key, JSON.stringify(items));
+  }
+}
 
-    let wishlist = JSON.parse(localStorage.getItem('wishlist')) || [];
 
-    if (!wishlist.includes(productHTML)) {
-      wishlist.push(productHTML);
-      localStorage.setItem('wishlist', JSON.stringify(wishlist));
-      alert("Added to Wishlist!");
-      const newwish = document.createElement('div');
-      newwish.className = 'wishes';
-      newwish.innerHTML = productHTML;
-      document.querySelector('.wisheslist').appendChild(newwish);
-    } else {
-      alert("Already in Wishlist!");
-    }
+//notworking wishlist and cart
+document.addEventListener('DOMContentLoaded', function() {
+  // Add to Cart button handler
+  document.querySelectorAll('.addcart-btn').forEach(btn => {
+    btn.addEventListener('click', function() {
+      const item = {
+        id: this.dataset.id,
+        name: this.dataset.name
+      };
+      addToStorage('cart', item);
+      alert(item.name + ' added to cart!');
+    });
   });
-});
 
-//cart ka js
-const addcarteBtn = document.getElementById('addcartbtn');
+  // Add to Wishlist button handler
+  document.querySelectorAll('.wishbtn').forEach(btn => {
+    btn.addEventListener('click', function() {
+      const item = {
+        id: this.dataset.id,
+        name: this.dataset.name
+      };
+      addToStorage('wishlist', item);
+      alert(item.name + ' added to wishlist!');
+    });
+  });
+
+  // Render wishlist only if element exists
+  const ul = document.getElementById('wishlist-items');
+  if (ul) {
+    const wishlist = JSON.parse(localStorage.getItem('wishlist')) || [];
+    ul.innerHTML = '';
+    wishlist.forEach(item => {
+      const li = document.createElement('li');
+      li.textContent = item.name;
+      ul.appendChild(li);
+    });
+  }
+});
